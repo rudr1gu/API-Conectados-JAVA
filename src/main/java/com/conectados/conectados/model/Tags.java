@@ -13,7 +13,7 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table(name = "tb_tags")
-public class Tag {
+public class Tags {
         
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
