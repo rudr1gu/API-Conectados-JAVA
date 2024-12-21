@@ -1,9 +1,12 @@
 package com.conectados.conectados.model;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
@@ -21,4 +24,7 @@ public class Tag {
     
         @NotBlank
         private String nome;
+
+        @ManyToMany(mappedBy = "tags")
+        private List<Materia> materias;
 }
