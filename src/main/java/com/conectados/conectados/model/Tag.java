@@ -12,19 +12,13 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "tb_cursos")
-public class Cursos {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+@Table(name = "tb_tags")
+public class Tag {
+        
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        private Long id;
     
-    @NotBlank    
-    private String nome;
-    
-    @NotBlank
-    private int modulo;
-    
-    @NotBlank
-    private String periodo;
+        @NotBlank
+        private String nome;
 }
