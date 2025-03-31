@@ -1,4 +1,4 @@
-Diagrama Entidade Relacionamento 
+## Diagrama Entidade Relacionamento 
 
 ```mermaid
 erDiagram
@@ -68,17 +68,54 @@ erDiagram
         int materias_id FK
     }
 
-    Usuarios ||--o{ Postagens : "1, n"
-    Usuarios ||--o{ Respostas : "1, n"
-    Usuarios ||--o{ Estrelas : "1, n"
-    Cursos ||--o{ Usuarios : "1, n"
-    Cursos ||--o{ Postagens : "1, n"
-    Cursos ||--o{ cursos_materias : "1, n"
-    Postagens ||--o{ Respostas : "1, n"
-    Respostas ||--|| Postagens : "1, 1"
-    Postagens ||--o{ Materias : "1, 1"
-    Respostas ||--o{ Estrelas : "0, n"
-    Materias ||--o{ materias_tags : "1, n"
-    Tags ||--o{ materias_tags : "1, n"
-    Materias ||--o{ cursos_materias : "1, n"
+    Usuarios ||--|{ Postagens : "cria"
+    Usuarios ||--|{ Respostas : "responde"
+    Usuarios ||--|{ Estrelas : "avalia"
+    Cursos ||--|{ Usuarios : "possui"
+    Cursos ||--|{ Postagens : "relacionado"
+    Cursos ||--|{ cursos_materias : "relaciona"
+    Postagens ||--|{ Respostas : "possui"
+    Postagens ||--|{ Materias : "relacionada"
+    Respostas ||--|{ Estrelas : "recebe"
+    Materias ||--|{ materias_tags : "tem"
+    Tags ||--|{ materias_tags : "associadas"
+    Materias ||--|{ cursos_materias : "relaciona"
+```
+
+## Estruturas das Pastas
+
+```
+conectados/
+├─ src/
+│  ├─ main/
+│  │  ├─ java/
+│  │  │  └─ com/
+│  │  │     └─ conectados/
+│  │  │        └─ conectados/
+│  │  │           ├─ model/
+│  │  │           │  ├─ Curso.java
+│  │  │           │  ├─ Estrela.java
+│  │  │           │  ├─ Materia.java
+│  │  │           │  ├─ Postagem.java
+│  │  │           │  ├─ Resposta.java
+│  │  │           │  ├─ Tag.java
+│  │  │           │  └─ Usuario.java
+│  │  │           └─ ConectadosApplication.java
+│  │  └─ resources/
+│  │     ├─ static/
+│  │     ├─ templates/
+│  │     └─ application.properties
+│  └─ test/
+│     └─ java/
+│        └─ com/
+│           └─ conectados/
+│              └─ conectados/
+│                 └─ ConectadosApplicationTests.java
+├─ .gitattributes
+├─ .gitignore
+├─ HELP.md
+├─ mvnw
+├─ mvnw.cmd
+├─ pom.xml
+└─ README.md
 ```
