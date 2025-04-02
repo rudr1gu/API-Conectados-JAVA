@@ -92,14 +92,23 @@ conectados/
 │  │  │  └─ com/
 │  │  │     └─ conectados/
 │  │  │        └─ conectados/
-│  │  │           ├─ model/
-│  │  │           │  ├─ Curso.java
-│  │  │           │  ├─ Estrela.java
-│  │  │           │  ├─ Materia.java
-│  │  │           │  ├─ Postagem.java
-│  │  │           │  ├─ Resposta.java
-│  │  │           │  ├─ Tag.java
-│  │  │           │  └─ Usuario.java
+│  │  │           ├─ domain/
+│  │  │           │  ├─ model/
+│  │  │           │  │  ├─ Curso.java
+│  │  │           │  │  ├─ Estrela.java
+│  │  │           │  │  ├─ Materia.java
+│  │  │           │  │  ├─ Postagem.java
+│  │  │           │  │  ├─ Resposta.java
+│  │  │           │  │  ├─ Tag.java
+│  │  │           │  │  └─ Usuario.java
+│  │  │           │  └─ repository/
+│  │  │           │     ├─ CursoRepository.java
+│  │  │           │     ├─ EstrelaRepository.java
+│  │  │           │     ├─ MateriaRepository.java
+│  │  │           │     ├─ PostagemRepository.java
+│  │  │           │     ├─ RespostaRepository.java
+│  │  │           │     ├─ TagRepository.java
+│  │  │           │     └─ UsuarioRepository.java
 │  │  │           └─ ConectadosApplication.java
 │  │  └─ resources/
 │  │     ├─ static/
@@ -118,4 +127,5 @@ conectados/
 ├─ mvnw.cmd
 ├─ pom.xml
 └─ README.md
+
 ```
