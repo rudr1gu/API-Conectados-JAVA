@@ -1,4 +1,5 @@
-package com.conectados.conectados.model;
+package com.conectados.conectados.domain.model;
+
 
 import java.util.List;
 
@@ -19,31 +20,27 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "tb_cursos")
-public class Curso {
-
+@Table(name = "tb_materias")
+public class Materia {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
-    @NotBlank    
-    private String nome;
-    
-    @NotBlank
-    private int modulo;
-    
-    @NotBlank
-    private String periodo;
 
-    @OneToMany(mappedBy = "curso", cascade = CascadeType.ALL)
-    private List<Usuario> usuarios;
+    @NotBlank
+    private String nome;
+
+    @ManyToMany(mappedBy = "materias")
+    private List<Curso> cursos;
 
     @ManyToMany
     @JoinTable(
-        name = "cursos_materias",
-        joinColumns =  @JoinColumn(name = "curso_id"),
-        inverseJoinColumns = @JoinColumn(name = "materia_id")
+        name = "materias_tags",
+        joinColumns = @JoinColumn(name = "materia_id"),
+        inverseJoinColumns = @JoinColumn(name = "tag_id")
     )
-    private List<Materia> materias;
+    private List<Tag> tags;
 
+    @OneToMany(mappedBy = "materia", cascade = CascadeType.ALL)
+    private List<Postagem> postagens;
 }

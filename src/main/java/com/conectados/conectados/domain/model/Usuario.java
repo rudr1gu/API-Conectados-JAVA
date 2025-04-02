@@ -1,4 +1,4 @@
-package com.conectados.conectados.model;
+package com.conectados.conectados.domain.model;
 
 import java.util.List;
 

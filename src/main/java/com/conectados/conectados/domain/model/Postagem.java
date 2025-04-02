@@ -1,4 +1,4 @@
-package com.conectados.conectados.model;
+package com.conectados.conectados.domain.model;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -14,30 +14,40 @@ import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 @Getter
 @Setter
 @Entity
-@Table(name = "tb_respostas")
-public class Resposta {
-
+@Table(name = "tb_postagens")
+public class Postagem {
+     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    
+    @NotBlank
+    private String titulo;
+    
     @NotBlank
     private String conteudo;
 
-    private LocalDate dataCriacao;
-
-    private LocalDate dataAtualizacao;
-
     @ManyToOne
     private Usuario usuario;
+    
+    @ManyToOne
+    private Curso curso;
 
     @ManyToOne
-    private Postagem postagem;
+    private Materia materia;
 
-    @OneToMany(mappedBy = "resposta", cascade = CascadeType.ALL)
-    private List<Estrela> estrelas;
+    @CreationTimestamp
+    private LocalDate dataCriacao;
+
+    @UpdateTimestamp
+    private LocalDate dataAtualizacao;
+
+    @OneToMany(mappedBy = "postagem", cascade = CascadeType.ALL)
+    private List<Resposta> respostas;
 }

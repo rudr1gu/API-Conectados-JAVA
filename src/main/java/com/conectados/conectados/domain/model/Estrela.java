@@ -1,4 +1,4 @@
-package com.conectados.conectados.model;
+package com.conectados.conectados.domain.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
