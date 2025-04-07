@@ -92,6 +92,8 @@ conectados/
 │  │  │  └─ com/
 │  │  │     └─ conectados/
 │  │  │        └─ conectados/
+│  │  │           ├─ controller/
+│  │  │           │  └─ UsuarioController.java
 │  │  │           ├─ domain/
 │  │  │           │  ├─ model/
 │  │  │           │  │  ├─ Curso.java
@@ -100,7 +102,8 @@ conectados/
 │  │  │           │  │  ├─ Postagem.java
 │  │  │           │  │  ├─ Resposta.java
 │  │  │           │  │  ├─ Tag.java
-│  │  │           │  │  └─ Usuario.java
+│  │  │           │  │  ├─ Usuario.java
+│  │  │           │  │  └─ UsuarioLogin.java
 │  │  │           │  └─ repository/
 │  │  │           │     ├─ CursoRepository.java
 │  │  │           │     ├─ EstrelaRepository.java
@@ -109,6 +112,14 @@ conectados/
 │  │  │           │     ├─ RespostaRepository.java
 │  │  │           │     ├─ TagRepository.java
 │  │  │           │     └─ UsuarioRepository.java
+│  │  │           ├─ security/
+│  │  │           │  ├─ BasicSecurityConfig.java
+│  │  │           │  ├─ JwtAuthFilter.java
+│  │  │           │  ├─ JwtService.java
+│  │  │           │  ├─ UserDetailsImpl.java
+│  │  │           │  └─ UserDetailsServiceImpl.java
+│  │  │           ├─ services/
+│  │  │           │  └─ UsuarioService.java
 │  │  │           └─ ConectadosApplication.java
 │  │  └─ resources/
 │  │     ├─ static/
@@ -127,5 +138,4 @@ conectados/
 ├─ mvnw.cmd
 ├─ pom.xml
 └─ README.md
-
 ```
