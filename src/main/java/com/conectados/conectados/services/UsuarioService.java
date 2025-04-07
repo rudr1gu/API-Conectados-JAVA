@@ -1,5 +1,6 @@
 package com.conectados.conectados.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,18 @@ public class UsuarioService {
 
     @Autowired
     private AuthenticationManager authenticationManager;
+
+    public Optional<Usuario> buscarUsuarioPorId(Long id) {
+        return usuarioRepository.findById(id);
+    }
+
+    public Optional<List<Usuario>> buscarTodos(){
+        List<Usuario> usuarios = usuarioRepository.findAll();
+        if (usuarios.isEmpty()) {
+            return Optional.empty();
+        }
+        return Optional.of(usuarios);
+    }
 
     public Optional<Usuario> cadastrarUsuario(Usuario usuario) {
         if (usuarioRepository.findByEmail(usuario.getEmail()).isPresent()) {
