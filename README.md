@@ -92,6 +92,8 @@ conectados/
 │  │  │  └─ com/
 │  │  │     └─ conectados/
 │  │  │        └─ conectados/
+│  │  │           ├─ configuration/
+│  │  │           │  └─ SwaggerConfig.java
 │  │  │           ├─ controller/
 │  │  │           │  └─ UsuarioController.java
 │  │  │           ├─ domain/
