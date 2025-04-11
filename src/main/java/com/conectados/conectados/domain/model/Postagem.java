@@ -12,6 +12,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
@@ -28,12 +29,17 @@ public class Postagem {
     private Long id;
     
     @NotBlank
+    @Size(min = 10, max = 150,message = "O título deve ter no mínimo 10 caracteres")
     private String titulo;
     
     @NotBlank
+    @Size(min = 10, max = 5000,message = "O conteúdo deve ter no mínimo 10 caracteres")
     private String conteudo;
 
-    @ManyToOne
+
+    private String imagemUrl;
+
+    @ManyToOne 
     private Usuario usuario;
     
     @ManyToOne
