@@ -18,6 +18,8 @@ import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Getter
 @Setter
 @Entity
@@ -39,13 +41,16 @@ public class Postagem {
 
     private String imagemUrl;
 
-    @ManyToOne 
+    @ManyToOne
+    @JsonIgnoreProperties("postagens")
     private Usuario usuario;
     
     @ManyToOne
+    @JsonIgnoreProperties("postagens")
     private Curso curso;
 
     @ManyToOne
+    @JsonIgnoreProperties("postagens")
     private Materia materia;
 
     @CreationTimestamp
