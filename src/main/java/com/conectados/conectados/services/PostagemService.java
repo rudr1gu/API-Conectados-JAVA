@@ -31,4 +31,12 @@ public class PostagemService {
         return postagemRepository.save(postagem);
     }
 
+    public Postagem atualizarPostagem(Postagem postagem) {
+        return postagemRepository.save(postagem);
+    }
+
+    public void deletarPostagem(Long id) {
+        postagemRepository.deleteById(id);
+    }
+
 }
