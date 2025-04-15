@@ -20,10 +20,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-
-
-
-
 @RestController
 @RequestMapping("/postagens")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -35,6 +31,13 @@ public class PostagemController {
     @GetMapping("/all")
     public ResponseEntity<List<Postagem>> getAllPostagens(){
         return ResponseEntity.ok(postagemService.buscarTodasPostagens().orElse(null));
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Postagem> getById(@PathVariable Long id) {
+        return postagemService.buscarPostagemPorId(id)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
     }
 
     @PostMapping("/cadastrar")
