@@ -86,6 +86,11 @@ erDiagram
 
 ```
 conectados/
+├─ .mvn/
+│  └─ wrapper/
+│     └─ maven-wrapper.properties
+├─ .vscode/
+│  └─ settings.json
 ├─ src/
 │  ├─ main/
 │  │  ├─ java/
@@ -95,6 +100,8 @@ conectados/
 │  │  │           ├─ configuration/
 │  │  │           │  └─ SwaggerConfig.java
 │  │  │           ├─ controller/
+│  │  │           │  ├─ PostagemController.java
+│  │  │           │  ├─ RespostaController.java
 │  │  │           │  └─ UsuarioController.java
 │  │  │           ├─ domain/
 │  │  │           │  ├─ model/
@@ -121,6 +128,8 @@ conectados/
 │  │  │           │  ├─ UserDetailsImpl.java
 │  │  │           │  └─ UserDetailsServiceImpl.java
 │  │  │           ├─ services/
+│  │  │           │  ├─ PostagemService.java
+│  │  │           │  ├─ RespostaService.java
 │  │  │           │  └─ UsuarioService.java
 │  │  │           └─ ConectadosApplication.java
 │  │  └─ resources/
@@ -132,6 +141,8 @@ conectados/
 │        └─ com/
 │           └─ conectados/
 │              └─ conectados/
+│                 ├─ usuariotest/
+│                 │  └─ UsuarioTest.java
 │                 └─ ConectadosApplicationTests.java
 ├─ .gitattributes
 ├─ .gitignore
